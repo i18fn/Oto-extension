@@ -1,0 +1,25 @@
+{
+    "name": "oto",
+    "displayName": "Oto",
+    "description": "Oto language for Visual Studio Code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "oto",
+            "aliases": ["oto", "oto"],
+            "extensions": [".oto"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "oto",
+            "scopeName": "source.oto",
+            "path": "./syntaxes/oto.tmLanguage.json"
+        }]
+    }
+}
