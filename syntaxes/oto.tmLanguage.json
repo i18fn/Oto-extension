@@ -3,6 +3,9 @@
 	"name": "oto",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -12,13 +15,16 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#comments"
-		},
-		{
 			"include": "#constants"
 		}
 	],
 	"repository": {
+		"comments": {
+			"comment": "コメント",
+			"name": "comment.block.oto",
+			"begin": "\/\\*",
+			"end": "\\*\/"
+		},
 		"keywords": {
 			"patterns": [
 				{
@@ -27,17 +33,17 @@
 					"match": "@(include)"
 				},
 				{
-					"comment": "予約語(紫色)",
+					"comment": "予約語",
 					"name": "keyword.control.oto",
 					"match": "\\b(?i)(begin|end|define|if|elsif|else|then|loop|not|func|track|filter|oscil|sound)\\b"
 				},
 				{
-					"comment": "命令(水色)",
+					"comment": "命令",
 					"name": "support.function",
 					"match": "\\b(?i)(print|beep|play|printwav|printvar|sleep|setsynth|setloop)\\b"
 				},
 				{
-					"comment": "フィルター(黄色)",
+					"comment": "フィルター",
 					"name": "support.class",
 					"match": "\\b(CLIP|FADE_IN|FADE_OUT|FADE|AMP|TREMOLO|DETUNE|CHOP|LPF|HPF|WAH|RADIO|VIBRATO)\\b"
 				},
@@ -76,12 +82,6 @@
 					"match": "\\b([0-9]+\\.?[0-9]*)\\b"
 				}
 			]
-		},
-		"comments": {
-			"comment": "コメント",
-			"name": "comment.block.oto",
-			"begin": "\/\\*",
-			"end": "\\*\/"
 		}
 	},
 	"scopeName": "source.oto"
