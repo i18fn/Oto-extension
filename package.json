@@ -4,6 +4,9 @@
     "displayName": "Oto",
     "description": "Oto language for Visual Studio Code",
     "version": "0.0.1",
+    "repository": {
+        "url": "https://github.com/i18fn/Oto-extension"
+    },
     "engines": {
         "vscode": "^1.63.0"
     },
