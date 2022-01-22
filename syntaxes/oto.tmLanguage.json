@@ -6,26 +6,82 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#variables"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.oto",
-				"match": "\\b(?i)(PLAY|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.oto",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.oto",
-					"match": "\\\\."
+					"comment": "字句解析部で解釈するコマンド",
+					"name": "keyword.control.oto",
+					"match": "@(include)"
+				},
+				{
+					"comment": "予約語(紫色)",
+					"name": "keyword.control.oto",
+					"match": "\\b(?i)(begin|end|define|if|elsif|else|then|loop|not|func|track|filter|oscil|sound)\\b"
+				},
+				{
+					"comment": "命令(水色)",
+					"name": "support.function",
+					"match": "\\b(?i)(print|beep|play|printwav|printvar|sleep|setsynth|setloop)\\b"
+				},
+				{
+					"comment": "フィルター(黄色)",
+					"name": "support.class",
+					"match": "\\b(CLIP|FADE_IN|FADE_OUT|FADE|AMP|TREMOLO|DETUNE|CHOP|LPF|HPF|WAH|RADIO|VIBRATO)\\b"
+				},
+				{
+					"comment": "演算子",
+					"name": "keyword.operator.new",
+					"match": "(<-|->|=|\\+|-|\\*|\/|%|==|!=|>|<|>=|<=|\\+=|-=|\\*=|\/=|%=)"
+				},
+				{
+					"comment": "演算子(and, or)",
+					"name": "keyword.operator.new",
+					"match": "\\b(?i)(and|or)\\b"
 				}
 			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"comment": "変数",
+					"name": "variable.name",
+					"match": "\\b([a-zA-Z]+?[a-zA-Z0-9#_]*)\\b"
+				}
+			]
+		},
+		"strings": {
+			"comment": "文字列リテラル",
+			"name": "string.quoted.double.oto",
+			"begin": "\"",
+			"end": "\""
+		},
+		"constants": {
+			"patterns": [
+				{
+					"comment": "数値",
+					"name": "constant.numeric.oto",
+					"match": "\\b([0-9]+\\.?[0-9]*)\\b"
+				}
+			]
+		},
+		"comments": {
+			"comment": "コメント",
+			"name": "comment.block.oto",
+			"begin": "\/\\*",
+			"end": "\\*\/"
 		}
 	},
 	"scopeName": "source.oto"
