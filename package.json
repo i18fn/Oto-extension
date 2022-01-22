@@ -1,5 +1,6 @@
 {
     "name": "oto",
+    "publisher": "fn",
     "displayName": "Oto",
     "description": "Oto language for Visual Studio Code",
     "version": "0.0.1",
