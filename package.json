@@ -3,7 +3,7 @@
     "publisher": "fn",
     "displayName": "Oto",
     "description": "Oto language for Visual Studio Code",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository": {
         "url": "https://github.com/i18fn/Oto-extension"
     },
