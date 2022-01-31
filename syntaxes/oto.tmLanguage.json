@@ -17,10 +17,17 @@
 	],
 	"repository": {
 		"comments": {
-			"comment": "コメント",
-			"name": "comment.block.oto",
-			"begin": "\/\\*",
-			"end": "\\*\/"
+			"patterns": [
+				{
+					"name": "comment.block.oto",
+					"begin": "\/\\*",
+					"end": "\\*\/"
+				}, {
+					"name": "comment.line.double-slash",
+					"begin": "\/\/",
+					"end": "\n"
+				}
+			]
 		},
 		"keywords": {
 			"patterns": [
@@ -36,7 +43,7 @@
 				},
 				{
 					"comment": "命令",
-					"name": "keyword.control.oto",
+					"name": "entity.name.function",
 					"match": "\\b(?i)(print|beep|play|printwav|printvar|sleep|setsynth|setloop|stop)\\b"
 				},
 				{
